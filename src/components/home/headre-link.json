@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_headre_links",
+  "info": {
+    "displayName": "HeadreLink",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Home": {
+      "type": "string"
+    },
+    "About": {
+      "type": "string"
+    }
+  }
+}
