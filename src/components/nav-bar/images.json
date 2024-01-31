@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_nav_bar_images",
+  "info": {
+    "displayName": "images"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

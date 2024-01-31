@@ -1,0 +1,18 @@
+{
+    "collectionName": "components_nav_bar_abouts",
+    "info": {
+        "displayName": "About"
+    },
+    "options": {},
+    "attributes": {
+        "Title": {
+            "type": "string"
+        },
+        "Link": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "text"
+        }
+    }
+}
