@@ -855,12 +855,7 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Home: Attribute.String;
-    About: Attribute.String;
-    Product: Attribute.String;
-    Contact: Attribute.String;
-    Blog: Attribute.String;
-    logo: Attribute.Media;
+    HOME: Attribute.Component<'nav-bar.home', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

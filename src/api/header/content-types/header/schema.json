@@ -12,30 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Home": {
-      "type": "string"
-    },
-    "About": {
-      "type": "string"
-    },
-    "Product": {
-      "type": "string"
-    },
-    "Contact": {
-      "type": "string"
-    },
-    "Blog": {
-      "type": "string"
-    },
-    "logo": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "HOME": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav-bar.home"
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_nav_bar_blogs",
+  "info": {
+    "displayName": "Blog"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Link": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
