@@ -1,15 +1,19 @@
 {
     "collectionName": "components_nav_bar_products",
     "info": {
-        "displayName": "Products"
+        "displayName": "Products",
+        "description": ""
     },
     "options": {},
     "attributes": {
+        "title": {
+            "type": "string"
+        },
         "PRODUCTS": {
             "type": "enumeration",
             "enum": [
-                "PAPER CUPS",
                 "PAPER TUBS",
+                "PAPER CUPS",
                 "PAPER GLASS",
                 "PAPER CONTAINERS"
             ]

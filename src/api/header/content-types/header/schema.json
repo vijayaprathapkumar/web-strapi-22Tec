@@ -12,10 +12,22 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "HOME": {
+    "Head": {
       "type": "component",
       "repeatable": true,
-      "component": "nav-bar.home"
+      "component": "nav-bar.topcontent"
+    },
+    "navbar": {
+      "type": "dynamiczone",
+      "components": [
+        "nav-bar.images",
+        "nav-bar.home",
+        "nav-bar.about",
+        "nav-bar.products",
+        "nav-bar.blog",
+        "nav-bar.contact",
+        "element.buttonlink"
+      ]
     }
   }
 }

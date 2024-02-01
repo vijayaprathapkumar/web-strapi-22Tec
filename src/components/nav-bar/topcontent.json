@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_nav_bar_topcontents",
+  "info": {
+    "displayName": "topcontent",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "bgcolor": {
+      "type": "enumeration",
+      "enum": [
+        "Primary:#1f5b36"
+      ]
+    }
+  }
+}

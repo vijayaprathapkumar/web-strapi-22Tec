@@ -855,7 +855,18 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    HOME: Attribute.Component<'nav-bar.home', true>;
+    Head: Attribute.Component<'nav-bar.topcontent', true>;
+    navbar: Attribute.DynamicZone<
+      [
+        'nav-bar.images',
+        'nav-bar.home',
+        'nav-bar.about',
+        'nav-bar.products',
+        'nav-bar.blog',
+        'nav-bar.contact',
+        'element.buttonlink'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -870,6 +881,31 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Schema.CollectionType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    Productslist: Attribute.DynamicZone<['product.product']>;
+    aboutus: Attribute.Component<'nav-bar.about', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -929,6 +965,7 @@ declare module '@strapi/types' {
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::banner.banner': ApiBannerBanner;
       'api::header.header': ApiHeaderHeader;
+      'api::home.home': ApiHomeHome;
       'api::offer-bar.offer-bar': ApiOfferBarOfferBar;
     }
   }

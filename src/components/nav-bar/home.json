@@ -1,7 +1,8 @@
 {
   "collectionName": "components_nav_bar_homes",
   "info": {
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {},
   "attributes": {

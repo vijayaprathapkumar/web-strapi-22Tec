@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Productslist": {
+      "type": "dynamiczone",
+      "components": [
+        "product.product"
+      ]
+    },
+    "aboutus": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav-bar.about"
+    }
+  }
+}
