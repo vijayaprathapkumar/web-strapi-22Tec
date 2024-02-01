@@ -1,18 +1,40 @@
 {
   "collectionName": "components_nav_bar_abouts",
   "info": {
-    "displayName": "About"
+    "displayName": "About",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string"
     },
-    "Link": {
+    "backgroundimage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
       "type": "string"
     },
     "Description": {
-      "type": "text"
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
