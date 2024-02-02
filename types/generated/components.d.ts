@@ -7,10 +7,10 @@ export interface ElementButtonlink extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
-    link: Attribute.String;
+    Title: Attribute.String;
+    Link: Attribute.String;
     isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
-    type: Attribute.Enumeration<['PRIMARY:#1f5b36']>;
+    colors: Attribute.JSON;
   };
 }
 
@@ -26,6 +26,7 @@ export interface NavBarAbout extends Schema.Component {
     link: Attribute.String;
     Description: Attribute.RichText;
     image: Attribute.Media;
+    colors: Attribute.JSON;
   };
 }
 
@@ -83,7 +84,7 @@ export interface NavBarProducts extends Schema.Component {
     description: '';
   };
   attributes: {
-    title: Attribute.String;
+    Title: Attribute.String;
     PRODUCTS: Attribute.Enumeration<
       ['PAPER TUBS', 'PAPER CUPS', 'PAPER GLASS', 'PAPER CONTAINERS']
     >;
@@ -98,7 +99,31 @@ export interface NavBarTopcontent extends Schema.Component {
   };
   attributes: {
     content: Attribute.String;
-    bgcolor: Attribute.Enumeration<['Primary:#1f5b36']>;
+    colors: Attribute.JSON;
+  };
+}
+
+export interface ProductClientReviews extends Schema.Component {
+  collectionName: 'components_product_client_reviews';
+  info: {
+    displayName: 'clientReviews';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    backgroundImage: Attribute.Media;
+    Content: Attribute.String;
+    colors: Attribute.JSON;
+  };
+}
+
+export interface ProductClient extends Schema.Component {
+  collectionName: 'components_product_clients';
+  info: {
+    displayName: 'client';
+  };
+  attributes: {
+    clientslogo: Attribute.Media;
   };
 }
 
@@ -106,10 +131,11 @@ export interface ProductProduct extends Schema.Component {
   collectionName: 'components_product_products';
   info: {
     displayName: 'product';
+    description: '';
   };
   attributes: {
     productimages: Attribute.Media;
-    title: Attribute.String;
+    Title: Attribute.String;
     link: Attribute.String;
   };
 }
@@ -125,6 +151,8 @@ declare module '@strapi/types' {
       'nav-bar.images': NavBarImages;
       'nav-bar.products': NavBarProducts;
       'nav-bar.topcontent': NavBarTopcontent;
+      'product.client-reviews': ProductClientReviews;
+      'product.client': ProductClient;
       'product.product': ProductProduct;
     }
   }

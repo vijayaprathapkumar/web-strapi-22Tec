@@ -6,7 +6,7 @@
     },
     "options": {},
     "attributes": {
-        "title": {
+        "Title": {
             "type": "string"
         },
         "PRODUCTS": {

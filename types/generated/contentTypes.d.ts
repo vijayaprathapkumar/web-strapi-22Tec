@@ -897,9 +897,11 @@ export interface ApiHomeHome extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    Productslist: Attribute.DynamicZone<['product.product']>;
+    Title: Attribute.String;
+    PRODUCTS: Attribute.DynamicZone<['product.product']>;
     aboutus: Attribute.Component<'nav-bar.about', true>;
+    clientreviews: Attribute.Component<'product.client-reviews', true>;
+    client: Attribute.Component<'product.client', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -1,21 +1,23 @@
 {
     "collectionName": "components_product_products",
     "info": {
-        "displayName": "product"
+        "displayName": "product",
+        "description": ""
     },
     "options": {},
     "attributes": {
         "productimages": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
             "allowedTypes": [
                 "images",
                 "files",
                 "videos",
                 "audios"
-            ],
-            "type": "media",
-            "multiple": true
+            ]
         },
-        "title": {
+        "Title": {
             "type": "string"
         },
         "link": {

@@ -12,10 +12,10 @@
     },
     "pluginOptions": {},
     "attributes": {
-        "title": {
+        "Title": {
             "type": "string"
         },
-        "Productslist": {
+        "PRODUCTS": {
             "type": "dynamiczone",
             "components": [
                 "product.product"
@@ -25,6 +25,17 @@
             "type": "component",
             "repeatable": true,
             "component": "nav-bar.about"
+        },
+        "clientreviews": {
+            "type": "component",
+            "repeatable": true,
+            "component": "product.client-reviews"
+        },
+        "client": {
+            "displayName": "client",
+            "type": "component",
+            "repeatable": true,
+            "component": "product.client"
         }
     }
 }
