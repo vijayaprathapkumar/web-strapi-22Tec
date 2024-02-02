@@ -127,6 +127,17 @@ export interface ProductClient extends Schema.Component {
   };
 }
 
+export interface ProductProductDetails extends Schema.Component {
+  collectionName: 'components_product_product_details';
+  info: {
+    displayName: 'productDetails';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+  };
+}
+
 export interface ProductProduct extends Schema.Component {
   collectionName: 'components_product_products';
   info: {
@@ -153,6 +164,7 @@ declare module '@strapi/types' {
       'nav-bar.topcontent': NavBarTopcontent;
       'product.client-reviews': ProductClientReviews;
       'product.client': ProductClient;
+      'product.product-details': ProductProductDetails;
       'product.product': ProductProduct;
     }
   }

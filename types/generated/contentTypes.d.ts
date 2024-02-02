@@ -902,6 +902,7 @@ export interface ApiHomeHome extends Schema.CollectionType {
     aboutus: Attribute.Component<'nav-bar.about', true>;
     clientreviews: Attribute.Component<'product.client-reviews', true>;
     client: Attribute.Component<'product.client', true>;
+    Details: Attribute.Component<'product.product-details', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

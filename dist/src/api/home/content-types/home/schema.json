@@ -36,6 +36,12 @@
             "type": "component",
             "repeatable": true,
             "component": "product.client"
+        },
+        "Details": {
+            "displayName": "productDetails",
+            "type": "component",
+            "repeatable": true,
+            "component": "product.product-details"
         }
     }
 }
