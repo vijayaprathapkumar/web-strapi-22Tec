@@ -1,12 +1,15 @@
 {
-  "collectionName": "components_product_products",
+  "collectionName": "components_product_client_reviews",
   "info": {
-    "displayName": "product",
+    "displayName": "clientReviews",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "productimages": {
+    "Title": {
+      "type": "string"
+    },
+    "backgroundImage": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -17,11 +20,11 @@
         "audios"
       ]
     },
-    "Title": {
+    "Content": {
       "type": "string"
     },
-    "link": {
-      "type": "string"
+    "colors": {
+      "type": "json"
     }
   }
 }

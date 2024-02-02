@@ -1,7 +1,7 @@
 {
-    "collectionName": "components_nav_bar_abouts",
+    "collectionName": "components_product_client_reviews",
     "info": {
-        "displayName": "About",
+        "displayName": "clientReviews",
         "description": ""
     },
     "options": {},
@@ -9,7 +9,7 @@
         "Title": {
             "type": "string"
         },
-        "backgroundimage": {
+        "backgroundImage": {
             "type": "media",
             "multiple": true,
             "required": false,
@@ -20,22 +20,8 @@
                 "audios"
             ]
         },
-        "link": {
+        "Content": {
             "type": "string"
-        },
-        "Description": {
-            "type": "richtext"
-        },
-        "image": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
         },
         "colors": {
             "type": "json"

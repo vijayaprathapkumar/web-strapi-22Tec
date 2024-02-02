@@ -6,21 +6,18 @@
   },
   "options": {},
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
     },
-    "link": {
+    "Link": {
       "type": "string"
     },
     "isExternal": {
       "type": "boolean",
       "default": false
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "PRIMARY:#1f5b36"
-      ]
+    "colors": {
+      "type": "json"
     }
   }
 }
