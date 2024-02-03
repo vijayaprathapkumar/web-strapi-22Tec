@@ -1,0 +1,19 @@
+{
+    "collectionName": "components_profiledetail_companyprofiles",
+    "info": {
+        "displayName": "details",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "company": {
+            "displayName": "companyview",
+            "type": "component",
+            "repeatable": true,
+            "component": "profiledetail.companyview"
+        }
+    }
+}

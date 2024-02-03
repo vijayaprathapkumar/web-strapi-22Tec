@@ -1,12 +1,18 @@
 {
-    "collectionName": "components_product_products",
+    "collectionName": "components_contact_phones",
     "info": {
-        "displayName": "product",
+        "displayName": "phone",
         "description": ""
     },
     "options": {},
     "attributes": {
-        "productimages": {
+        "title": {
+            "type": "string"
+        },
+        "link": {
+            "type": "string"
+        },
+        "phoneicon": {
             "type": "media",
             "multiple": true,
             "required": false,
@@ -17,13 +23,7 @@
                 "audios"
             ]
         },
-        "Title": {
-            "type": "string"
-        },
-        "link": {
-            "type": "string"
-        },
-        "type": {
+        "number": {
             "type": "string"
         }
     }

@@ -42,6 +42,20 @@
       "type": "component",
       "repeatable": true,
       "component": "product.product-details"
+    },
+    "footer": {
+      "type": "dynamiczone",
+      "components": [
+        "contact.contactus",
+        "profiledetail.companyprofile",
+        "profiledetail.service",
+        "profiledetail.socialnetwork"
+      ]
+    },
+    "copyright": {
+      "type": "component",
+      "repeatable": true,
+      "component": "profiledetail.product"
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_profiledetail_companyviews",
+  "info": {
+    "displayName": "companyview",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

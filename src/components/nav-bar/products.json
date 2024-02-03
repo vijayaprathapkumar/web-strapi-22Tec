@@ -17,6 +17,12 @@
         "PAPER GLASS",
         "PAPER CONTAINERS"
       ]
+    },
+    "type": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_profiledetail_socialnetworks",
+  "info": {
+    "displayName": "socialnetwork"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

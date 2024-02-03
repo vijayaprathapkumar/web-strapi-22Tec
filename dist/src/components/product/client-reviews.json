@@ -20,11 +20,17 @@
                 "audios"
             ]
         },
-        "Content": {
+        "content": {
             "type": "string"
         },
         "colors": {
             "type": "json"
+        },
+        "type": {
+            "type": "string"
+        },
+        "link": {
+            "type": "string"
         }
     }
 }

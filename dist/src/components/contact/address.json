@@ -1,12 +1,12 @@
 {
-    "collectionName": "components_product_products",
+    "collectionName": "components_contact_addresses",
     "info": {
-        "displayName": "product",
+        "displayName": "address",
         "description": ""
     },
     "options": {},
     "attributes": {
-        "productimages": {
+        "addressicon": {
             "type": "media",
             "multiple": true,
             "required": false,
@@ -17,13 +17,13 @@
                 "audios"
             ]
         },
-        "Title": {
+        "title": {
             "type": "string"
         },
         "link": {
             "type": "string"
         },
-        "type": {
+        "content": {
             "type": "string"
         }
     }

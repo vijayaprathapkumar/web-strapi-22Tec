@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_profiledetail_services",
+  "info": {
+    "displayName": "service",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "company": {
+      "type": "component",
+      "repeatable": true,
+      "component": "profiledetail.companyview"
+    }
+  }
+}

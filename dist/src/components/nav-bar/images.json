@@ -1,19 +1,24 @@
 {
     "collectionName": "components_nav_bar_images",
     "info": {
-        "displayName": "images"
+        "displayName": "images",
+        "description": ""
     },
     "options": {},
     "attributes": {
         "logo": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
             "allowedTypes": [
                 "images",
                 "files",
                 "videos",
                 "audios"
-            ],
-            "type": "media",
-            "multiple": true
+            ]
+        },
+        "type": {
+            "type": "string"
         }
     }
 }

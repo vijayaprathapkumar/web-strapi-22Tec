@@ -9,11 +9,14 @@
     "Title": {
       "type": "string"
     },
-    "Link": {
+    "link": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

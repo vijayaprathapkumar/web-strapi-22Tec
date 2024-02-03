@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_profiledetail_products",
+  "info": {
+    "displayName": "footerproduct",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "colors": {
+      "type": "json"
+    }
+  }
+}

@@ -1,12 +1,15 @@
 {
-  "collectionName": "components_product_products",
+  "collectionName": "components_contact_emails",
   "info": {
-    "displayName": "product",
+    "displayName": "email",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "productimages": {
+    "title": {
+      "type": "string"
+    },
+    "emailicon": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -17,13 +20,10 @@
         "audios"
       ]
     },
-    "Title": {
-      "type": "string"
-    },
     "link": {
       "type": "string"
     },
-    "type": {
+    "content": {
       "type": "string"
     }
   }

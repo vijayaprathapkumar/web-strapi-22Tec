@@ -1,18 +1,12 @@
 {
-    "collectionName": "components_nav_bar_topcontents",
+    "collectionName": "components_profiledetail_companyviews",
     "info": {
-        "displayName": "topcontent",
+        "displayName": "companyview",
         "description": ""
     },
     "options": {},
     "attributes": {
         "content": {
-            "type": "string"
-        },
-        "colors": {
-            "type": "json"
-        },
-        "type": {
             "type": "string"
         },
         "link": {
