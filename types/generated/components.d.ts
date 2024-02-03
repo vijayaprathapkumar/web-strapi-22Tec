@@ -1,5 +1,60 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ContactAddress extends Schema.Component {
+  collectionName: 'components_contact_addresses';
+  info: {
+    displayName: 'address';
+    description: '';
+  };
+  attributes: {
+    addressicon: Attribute.Media;
+    title: Attribute.String;
+    link: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
+export interface ContactContactus extends Schema.Component {
+  collectionName: 'components_contact_contactuses';
+  info: {
+    displayName: 'contactus';
+  };
+  attributes: {
+    title: Attribute.String;
+    addressdetail: Attribute.Component<'contact.address', true>;
+    emaildetail: Attribute.Component<'contact.email', true>;
+    phonedetail: Attribute.Component<'contact.phone', true>;
+  };
+}
+
+export interface ContactEmail extends Schema.Component {
+  collectionName: 'components_contact_emails';
+  info: {
+    displayName: 'email';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    emailicon: Attribute.Media;
+    link: Attribute.String;
+    content: Attribute.String;
+  };
+}
+
+export interface ContactPhone extends Schema.Component {
+  collectionName: 'components_contact_phones';
+  info: {
+    displayName: 'phone';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    link: Attribute.String;
+    phoneicon: Attribute.Media;
+    number: Attribute.String;
+  };
+}
+
 export interface ElementButtonlink extends Schema.Component {
   collectionName: 'components_element_buttonlinks';
   info: {
@@ -8,9 +63,10 @@ export interface ElementButtonlink extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String;
-    Link: Attribute.String;
+    link: Attribute.String;
     isExternal: Attribute.Boolean & Attribute.DefaultTo<false>;
     colors: Attribute.JSON;
+    type: Attribute.String;
   };
 }
 
@@ -22,11 +78,15 @@ export interface NavBarAbout extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String;
-    backgroundimage: Attribute.Media;
+    backgroundImage: Attribute.Media;
     link: Attribute.String;
-    Description: Attribute.RichText;
     image: Attribute.Media;
     colors: Attribute.JSON;
+    type: Attribute.String;
+    description1: Attribute.Text;
+    description2: Attribute.Text;
+    description3: Attribute.Text;
+    description4: Attribute.Text;
   };
 }
 
@@ -34,11 +94,13 @@ export interface NavBarBlog extends Schema.Component {
   collectionName: 'components_nav_bar_blogs';
   info: {
     displayName: 'Blog';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
-    Link: Attribute.String;
-    Description: Attribute.Text;
+    link: Attribute.String;
+    description: Attribute.Text;
+    type: Attribute.String;
   };
 }
 
@@ -46,11 +108,13 @@ export interface NavBarContact extends Schema.Component {
   collectionName: 'components_nav_bar_contacts';
   info: {
     displayName: 'Contact';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
-    Link: Attribute.String;
-    Description: Attribute.Text;
+    link: Attribute.String;
+    description: Attribute.Text;
+    type: Attribute.String;
   };
 }
 
@@ -62,8 +126,9 @@ export interface NavBarHome extends Schema.Component {
   };
   attributes: {
     Title: Attribute.String;
-    Link: Attribute.String;
-    Description: Attribute.Text;
+    link: Attribute.String;
+    description: Attribute.Text;
+    type: Attribute.String;
   };
 }
 
@@ -71,9 +136,11 @@ export interface NavBarImages extends Schema.Component {
   collectionName: 'components_nav_bar_images';
   info: {
     displayName: 'images';
+    description: '';
   };
   attributes: {
     logo: Attribute.Media;
+    type: Attribute.String;
   };
 }
 
@@ -88,6 +155,8 @@ export interface NavBarProducts extends Schema.Component {
     PRODUCTS: Attribute.Enumeration<
       ['PAPER TUBS', 'PAPER CUPS', 'PAPER GLASS', 'PAPER CONTAINERS']
     >;
+    type: Attribute.String;
+    link: Attribute.String;
   };
 }
 
@@ -100,6 +169,8 @@ export interface NavBarTopcontent extends Schema.Component {
   attributes: {
     content: Attribute.String;
     colors: Attribute.JSON;
+    type: Attribute.String;
+    link: Attribute.String;
   };
 }
 
@@ -112,8 +183,10 @@ export interface ProductClientReviews extends Schema.Component {
   attributes: {
     Title: Attribute.String;
     backgroundImage: Attribute.Media;
-    Content: Attribute.String;
+    content: Attribute.String;
     colors: Attribute.JSON;
+    type: Attribute.String;
+    link: Attribute.String;
   };
 }
 
@@ -121,9 +194,11 @@ export interface ProductClient extends Schema.Component {
   collectionName: 'components_product_clients';
   info: {
     displayName: 'client';
+    description: '';
   };
   attributes: {
     clientslogo: Attribute.Media;
+    link: Attribute.String;
   };
 }
 
@@ -131,10 +206,13 @@ export interface ProductProductDetails extends Schema.Component {
   collectionName: 'components_product_product_details';
   info: {
     displayName: 'productDetails';
+    description: '';
   };
   attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
+    type: Attribute.String;
+    heading: Attribute.String;
+    description: Attribute.Blocks;
+    link: Attribute.String;
   };
 }
 
@@ -148,12 +226,90 @@ export interface ProductProduct extends Schema.Component {
     productimages: Attribute.Media;
     Title: Attribute.String;
     link: Attribute.String;
+    type: Attribute.String;
+  };
+}
+
+export interface ProfiledetailCompanyprofile extends Schema.Component {
+  collectionName: 'components_profiledetail_companyprofiles';
+  info: {
+    displayName: 'details';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    company: Attribute.Component<'profiledetail.companyview', true>;
+  };
+}
+
+export interface ProfiledetailCompanyview extends Schema.Component {
+  collectionName: 'components_profiledetail_companyviews';
+  info: {
+    displayName: 'companyview';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+    link: Attribute.String;
+  };
+}
+
+export interface ProfiledetailProduct extends Schema.Component {
+  collectionName: 'components_profiledetail_products';
+  info: {
+    displayName: 'footerproduct';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+    title: Attribute.String;
+    colors: Attribute.JSON;
+  };
+}
+
+export interface ProfiledetailService extends Schema.Component {
+  collectionName: 'components_profiledetail_services';
+  info: {
+    displayName: 'service';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    company: Attribute.Component<'profiledetail.companyview', true>;
+  };
+}
+
+export interface ProfiledetailSocialnetwork extends Schema.Component {
+  collectionName: 'components_profiledetail_socialnetworks';
+  info: {
+    displayName: 'socialnetwork';
+  };
+  attributes: {
+    title: Attribute.String;
+    logos: Attribute.Media;
+    description: Attribute.Text;
+  };
+}
+
+export interface SharedLink extends Schema.Component {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'link';
+  };
+  attributes: {
+    href: Attribute.String;
+    label: Attribute.String;
+    target: Attribute.Enumeration<['_blank']>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'contact.address': ContactAddress;
+      'contact.contactus': ContactContactus;
+      'contact.email': ContactEmail;
+      'contact.phone': ContactPhone;
       'element.buttonlink': ElementButtonlink;
       'nav-bar.about': NavBarAbout;
       'nav-bar.blog': NavBarBlog;
@@ -166,6 +322,12 @@ declare module '@strapi/types' {
       'product.client': ProductClient;
       'product.product-details': ProductProductDetails;
       'product.product': ProductProduct;
+      'profiledetail.companyprofile': ProfiledetailCompanyprofile;
+      'profiledetail.companyview': ProfiledetailCompanyview;
+      'profiledetail.product': ProfiledetailProduct;
+      'profiledetail.service': ProfiledetailService;
+      'profiledetail.socialnetwork': ProfiledetailSocialnetwork;
+      'shared.link': SharedLink;
     }
   }
 }

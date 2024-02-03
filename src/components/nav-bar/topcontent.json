@@ -11,6 +11,12 @@
     },
     "colors": {
       "type": "json"
+    },
+    "type": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }

@@ -1,15 +1,22 @@
 {
   "collectionName": "components_product_product_details",
   "info": {
-    "displayName": "productDetails"
+    "displayName": "productDetails",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "type": {
       "type": "string"
     },
-    "Description": {
-      "type": "text"
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }

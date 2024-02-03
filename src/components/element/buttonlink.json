@@ -9,7 +9,7 @@
     "Title": {
       "type": "string"
     },
-    "Link": {
+    "link": {
       "type": "string"
     },
     "isExternal": {
@@ -18,6 +18,9 @@
     },
     "colors": {
       "type": "json"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

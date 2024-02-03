@@ -1,18 +1,22 @@
 {
   "collectionName": "components_nav_bar_contacts",
   "info": {
-    "displayName": "Contact"
+    "displayName": "Contact",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Title": {
       "type": "string"
     },
-    "Link": {
+    "link": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
+    },
+    "type": {
+      "type": "string"
     }
   }
 }

@@ -9,7 +9,7 @@
         "Title": {
             "type": "string"
         },
-        "backgroundimage": {
+        "backgroundImage": {
             "type": "media",
             "multiple": true,
             "required": false,
@@ -22,9 +22,6 @@
         },
         "link": {
             "type": "string"
-        },
-        "Description": {
-            "type": "richtext"
         },
         "image": {
             "type": "media",
@@ -39,6 +36,21 @@
         },
         "colors": {
             "type": "json"
+        },
+        "type": {
+            "type": "string"
+        },
+        "description1": {
+            "type": "text"
+        },
+        "description2": {
+            "type": "text"
+        },
+        "description3": {
+            "type": "text"
+        },
+        "description4": {
+            "type": "text"
         }
     }
 }

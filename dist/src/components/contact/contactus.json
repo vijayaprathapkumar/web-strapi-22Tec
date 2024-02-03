@@ -1,0 +1,29 @@
+{
+    "collectionName": "components_contact_contactuses",
+    "info": {
+        "displayName": "contactus"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "addressdetail": {
+            "displayName": "address",
+            "type": "component",
+            "repeatable": true,
+            "component": "contact.address"
+        },
+        "emaildetail": {
+            "type": "component",
+            "repeatable": true,
+            "component": "contact.email"
+        },
+        "phonedetail": {
+            "displayName": "phone",
+            "type": "component",
+            "repeatable": true,
+            "component": "contact.phone"
+        }
+    }
+}

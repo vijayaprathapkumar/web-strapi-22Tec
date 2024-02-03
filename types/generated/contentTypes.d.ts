@@ -903,6 +903,15 @@ export interface ApiHomeHome extends Schema.CollectionType {
     clientreviews: Attribute.Component<'product.client-reviews', true>;
     client: Attribute.Component<'product.client', true>;
     Details: Attribute.Component<'product.product-details', true>;
+    footer: Attribute.DynamicZone<
+      [
+        'contact.contactus',
+        'profiledetail.companyprofile',
+        'profiledetail.service',
+        'profiledetail.socialnetwork'
+      ]
+    >;
+    copyright: Attribute.Component<'profiledetail.product', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
