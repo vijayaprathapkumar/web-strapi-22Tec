@@ -6,19 +6,14 @@
   },
   "options": {},
   "attributes": {
-    "clientslogo": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "link": {
       "type": "string"
+    },
+    "clientlogo": {
+      "displayName": "clientlogo",
+      "type": "component",
+      "repeatable": true,
+      "component": "product.clientlogo"
     }
   }
 }

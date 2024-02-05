@@ -174,6 +174,14 @@ export interface NavBarTopcontent extends Schema.Component {
   };
 }
 
+export interface ProductAbout extends Schema.Component {
+  collectionName: 'components_product_abouts';
+  info: {
+    displayName: 'About';
+  };
+  attributes: {};
+}
+
 export interface ProductClientReviews extends Schema.Component {
   collectionName: 'components_product_client_reviews';
   info: {
@@ -197,8 +205,19 @@ export interface ProductClient extends Schema.Component {
     description: '';
   };
   attributes: {
-    clientslogo: Attribute.Media;
     link: Attribute.String;
+    clientlogo: Attribute.Component<'product.clientlogo', true>;
+  };
+}
+
+export interface ProductClientlogo extends Schema.Component {
+  collectionName: 'components_product_clientlogos';
+  info: {
+    displayName: 'clientlogo';
+    description: '';
+  };
+  attributes: {
+    logos: Attribute.Media;
   };
 }
 
@@ -318,8 +337,10 @@ declare module '@strapi/types' {
       'nav-bar.images': NavBarImages;
       'nav-bar.products': NavBarProducts;
       'nav-bar.topcontent': NavBarTopcontent;
+      'product.about': ProductAbout;
       'product.client-reviews': ProductClientReviews;
       'product.client': ProductClient;
+      'product.clientlogo': ProductClientlogo;
       'product.product-details': ProductProductDetails;
       'product.product': ProductProduct;
       'profiledetail.companyprofile': ProfiledetailCompanyprofile;
