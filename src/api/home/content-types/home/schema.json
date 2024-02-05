@@ -49,13 +49,9 @@
         "contact.contactus",
         "profiledetail.companyprofile",
         "profiledetail.service",
-        "profiledetail.socialnetwork"
+        "profiledetail.socialnetwork",
+        "profiledetail.product"
       ]
-    },
-    "copyright": {
-      "type": "component",
-      "repeatable": true,
-      "component": "profiledetail.product"
     }
   }
 }

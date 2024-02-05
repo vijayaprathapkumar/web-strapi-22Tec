@@ -4,28 +4,29 @@
   "info": {
     "singularName": "about-us",
     "pluralName": "about-uses",
-    "displayName": "About Us"
+    "displayName": "About Us",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "clients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.client"
     },
-    "backgroundImage": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "aboutus": {
+      "type": "component",
+      "repeatable": true,
+      "component": "nav-bar.about"
     },
-    "Description": {
-      "type": "richtext"
+    "PRODUCTS": {
+      "type": "dynamiczone",
+      "components": [
+        "product.product"
+      ]
     }
   }
 }

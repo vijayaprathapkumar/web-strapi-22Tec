@@ -787,14 +787,15 @@ export interface ApiAboutUsAboutUs extends Schema.CollectionType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'About Us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    backgroundImage: Attribute.Media;
-    Description: Attribute.RichText;
+    clients: Attribute.Component<'product.client', true>;
+    aboutus: Attribute.Component<'nav-bar.about', true>;
+    PRODUCTS: Attribute.DynamicZone<['product.product']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -908,10 +909,10 @@ export interface ApiHomeHome extends Schema.CollectionType {
         'contact.contactus',
         'profiledetail.companyprofile',
         'profiledetail.service',
-        'profiledetail.socialnetwork'
+        'profiledetail.socialnetwork',
+        'profiledetail.product'
       ]
     >;
-    copyright: Attribute.Component<'profiledetail.product', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
