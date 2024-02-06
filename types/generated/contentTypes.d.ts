@@ -781,62 +781,53 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutUsAboutUs extends Schema.CollectionType {
-  collectionName: 'about_uses';
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
   info: {
-    singularName: 'about-us';
-    pluralName: 'about-uses';
-    displayName: 'About Us';
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactUsContactUs extends Schema.CollectionType {
+  collectionName: 'contact_uses';
+  info: {
+    singularName: 'contact-us';
+    pluralName: 'contact-uses';
+    displayName: 'Contact Us';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    clients: Attribute.Component<'product.client', true>;
-    aboutus: Attribute.Component<'nav-bar.about', true>;
-    PRODUCTS: Attribute.DynamicZone<['product.product']>;
+    contactheader: Attribute.Component<'product.about', true>;
+    form: Attribute.DynamicZone<['element.input-form', 'element.buttonlink']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::about-us.about-us',
+      'api::contact-us.contact-us',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::about-us.about-us',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiBannerBanner extends Schema.CollectionType {
-  collectionName: 'banners';
-  info: {
-    singularName: 'banner';
-    pluralName: 'banners';
-    displayName: 'Banner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    BannerImage: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::banner.banner',
+      'api::contact-us.contact-us',
       'oneToOne',
       'admin::user'
     > &
@@ -913,46 +904,15 @@ export interface ApiHomeHome extends Schema.CollectionType {
         'profiledetail.product'
       ]
     >;
+    contactheader: Attribute.Component<'product.about', true>;
+    form: Attribute.DynamicZone<['element.input-form', 'element.buttonlink']>;
+    route: Attribute.Component<'shared.map'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiOfferBarOfferBar extends Schema.CollectionType {
-  collectionName: 'offer_bars';
-  info: {
-    singularName: 'offer-bar';
-    pluralName: 'offer-bars';
-    displayName: 'offer Bar';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    BackgroundColor: Attribute.Enumeration<
-      ['#FEFBEE', '#F5E8CA', '#E4C282', '#D39C3A']
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::offer-bar.offer-bar',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::offer-bar.offer-bar',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -975,11 +935,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::banner.banner': ApiBannerBanner;
+      'api::blog.blog': ApiBlogBlog;
+      'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
-      'api::offer-bar.offer-bar': ApiOfferBarOfferBar;
     }
   }
 }

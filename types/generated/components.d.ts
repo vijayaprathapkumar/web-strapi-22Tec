@@ -70,6 +70,18 @@ export interface ElementButtonlink extends Schema.Component {
   };
 }
 
+export interface ElementInputForm extends Schema.Component {
+  collectionName: 'components_element_input_forms';
+  info: {
+    displayName: 'inputForm';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    type: Attribute.String;
+  };
+}
+
 export interface NavBarAbout extends Schema.Component {
   collectionName: 'components_nav_bar_abouts';
   info: {
@@ -178,8 +190,15 @@ export interface ProductAbout extends Schema.Component {
   collectionName: 'components_product_abouts';
   info: {
     displayName: 'About';
+    description: '';
   };
-  attributes: {};
+  attributes: {
+    title: Attribute.String;
+    link: Attribute.String;
+    content: Attribute.String;
+    backgroundImage: Attribute.Media;
+    colors: Attribute.JSON;
+  };
 }
 
 export interface ProductClientReviews extends Schema.Component {
@@ -310,15 +329,28 @@ export interface ProfiledetailSocialnetwork extends Schema.Component {
   };
 }
 
-export interface SharedLink extends Schema.Component {
-  collectionName: 'components_shared_links';
+export interface SharedAddressForm extends Schema.Component {
+  collectionName: 'components_shared_address_forms';
   info: {
-    displayName: 'link';
+    displayName: 'addressForm';
+    description: '';
   };
   attributes: {
-    href: Attribute.String;
-    label: Attribute.String;
-    target: Attribute.Enumeration<['_blank']>;
+    content: Attribute.String;
+    type: Attribute.String;
+  };
+}
+
+export interface SharedMap extends Schema.Component {
+  collectionName: 'components_shared_maps';
+  info: {
+    displayName: 'map';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    address: Attribute.Component<'shared.address-form', true>;
+    mapimage: Attribute.Media;
   };
 }
 
@@ -330,6 +362,7 @@ declare module '@strapi/types' {
       'contact.email': ContactEmail;
       'contact.phone': ContactPhone;
       'element.buttonlink': ElementButtonlink;
+      'element.input-form': ElementInputForm;
       'nav-bar.about': NavBarAbout;
       'nav-bar.blog': NavBarBlog;
       'nav-bar.contact': NavBarContact;
@@ -348,7 +381,8 @@ declare module '@strapi/types' {
       'profiledetail.product': ProfiledetailProduct;
       'profiledetail.service': ProfiledetailService;
       'profiledetail.socialnetwork': ProfiledetailSocialnetwork;
-      'shared.link': SharedLink;
+      'shared.address-form': SharedAddressForm;
+      'shared.map': SharedMap;
     }
   }
 }

@@ -52,6 +52,24 @@
                 "profiledetail.socialnetwork",
                 "profiledetail.product"
             ]
+        },
+        "contactheader": {
+            "type": "component",
+            "repeatable": true,
+            "component": "product.about"
+        },
+        "form": {
+            "type": "dynamiczone",
+            "components": [
+                "element.input-form",
+                "element.buttonlink"
+            ]
+        },
+        "route": {
+            "displayName": "map",
+            "type": "component",
+            "repeatable": false,
+            "component": "shared.map"
         }
     }
 }

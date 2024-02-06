@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_product_abouts",
+  "collectionName": "components_shared_maps",
   "info": {
-    "displayName": "About",
+    "displayName": "map",
     "description": ""
   },
   "options": {},
@@ -9,13 +9,13 @@
     "title": {
       "type": "string"
     },
-    "link": {
-      "type": "string"
+    "address": {
+      "displayName": "addressForm",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.address-form"
     },
-    "content": {
-      "type": "string"
-    },
-    "backgroundImage": {
+    "mapimage": {
       "allowedTypes": [
         "images",
         "files",
@@ -24,9 +24,6 @@
       ],
       "type": "media",
       "multiple": true
-    },
-    "colors": {
-      "type": "json"
     }
   }
 }
