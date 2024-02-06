@@ -1,0 +1,28 @@
+{
+    "kind": "collectionType",
+    "collectionName": "contact_uses",
+    "info": {
+        "singularName": "contact-us",
+        "pluralName": "contact-uses",
+        "displayName": "Contact Us",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "contactheader": {
+            "type": "component",
+            "repeatable": true,
+            "component": "product.about"
+        },
+        "form": {
+            "type": "dynamiczone",
+            "components": [
+                "element.input-form",
+                "element.buttonlink"
+            ]
+        }
+    }
+}
