@@ -1,5 +1,33 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BlogBlogdetail extends Schema.Component {
+  collectionName: 'components_blog_blogdetails';
+  info: {
+    displayName: 'blogdetail';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+    link: Attribute.String;
+    blogbutton: Attribute.Component<'element.buttonlink', true>;
+  };
+}
+
+export interface BlogBlogheader extends Schema.Component {
+  collectionName: 'components_blog_blogheaders';
+  info: {
+    displayName: 'blogheader';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media;
+    date: Attribute.Date;
+    subtitle: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface ContactAddress extends Schema.Component {
   collectionName: 'components_contact_addresses';
   info: {
@@ -349,7 +377,6 @@ export interface SharedMap extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    address: Attribute.Component<'shared.address-form', true>;
     mapimage: Attribute.Media;
   };
 }
@@ -357,6 +384,8 @@ export interface SharedMap extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blog.blogdetail': BlogBlogdetail;
+      'blog.blogheader': BlogBlogheader;
       'contact.address': ContactAddress;
       'contact.contactus': ContactContactus;
       'contact.email': ContactEmail;

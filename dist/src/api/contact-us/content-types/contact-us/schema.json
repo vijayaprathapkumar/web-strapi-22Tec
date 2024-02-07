@@ -12,11 +12,6 @@
     },
     "pluginOptions": {},
     "attributes": {
-        "contactheader": {
-            "type": "component",
-            "repeatable": true,
-            "component": "product.about"
-        },
         "form": {
             "type": "dynamiczone",
             "components": [

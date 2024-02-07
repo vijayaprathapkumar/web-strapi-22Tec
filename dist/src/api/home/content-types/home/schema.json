@@ -54,22 +54,22 @@
             ]
         },
         "contactheader": {
-            "type": "component",
-            "repeatable": true,
-            "component": "product.about"
-        },
-        "form": {
             "type": "dynamiczone",
             "components": [
+                "product.about",
                 "element.input-form",
-                "element.buttonlink"
+                "element.buttonlink",
+                "shared.address-form",
+                "shared.map"
             ]
         },
-        "route": {
-            "displayName": "map",
-            "type": "component",
-            "repeatable": false,
-            "component": "shared.map"
+        "blogcontent": {
+            "type": "dynamiczone",
+            "components": [
+                "product.about",
+                "blog.blogheader",
+                "blog.blogdetail"
+            ]
         }
     }
 }
