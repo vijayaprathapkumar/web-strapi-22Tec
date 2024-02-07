@@ -1,0 +1,21 @@
+{
+    "collectionName": "components_blog_blogdetails",
+    "info": {
+        "displayName": "blogdetail",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "content": {
+            "type": "string"
+        },
+        "link": {
+            "type": "string"
+        },
+        "blogbutton": {
+            "type": "component",
+            "repeatable": true,
+            "component": "element.buttonlink"
+        }
+    }
+}

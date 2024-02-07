@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_shared_maps",
+  "collectionName": "components_blog_blogheaders",
   "info": {
-    "displayName": "map",
+    "displayName": "blogheader",
     "description": ""
   },
   "options": {},
@@ -9,7 +9,7 @@
     "title": {
       "type": "string"
     },
-    "mapimage": {
+    "image": {
       "allowedTypes": [
         "images",
         "files",
@@ -18,6 +18,15 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "date": {
+      "type": "date"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

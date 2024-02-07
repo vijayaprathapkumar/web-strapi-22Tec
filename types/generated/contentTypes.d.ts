@@ -781,28 +781,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiBlogBlog extends Schema.CollectionType {
-  collectionName: 'blogs';
-  info: {
-    singularName: 'blog';
-    pluralName: 'blogs';
-    displayName: 'Blog';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface ApiContactUsContactUs extends Schema.CollectionType {
   collectionName: 'contact_uses';
   info: {
@@ -815,7 +793,6 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    contactheader: Attribute.Component<'product.about', true>;
     form: Attribute.DynamicZone<['element.input-form', 'element.buttonlink']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -904,9 +881,18 @@ export interface ApiHomeHome extends Schema.CollectionType {
         'profiledetail.product'
       ]
     >;
-    contactheader: Attribute.Component<'product.about', true>;
-    form: Attribute.DynamicZone<['element.input-form', 'element.buttonlink']>;
-    route: Attribute.Component<'shared.map'>;
+    contactheader: Attribute.DynamicZone<
+      [
+        'product.about',
+        'element.input-form',
+        'element.buttonlink',
+        'shared.address-form',
+        'shared.map'
+      ]
+    >;
+    blogcontent: Attribute.DynamicZone<
+      ['product.about', 'blog.blogheader', 'blog.blogdetail']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -935,7 +921,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::blog.blog': ApiBlogBlog;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
