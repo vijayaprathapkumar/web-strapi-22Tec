@@ -781,6 +781,29 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogbanner: Attribute.Component<'product.about', true>;
+    bloglist: Attribute.Component<'blog.blogheader', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiContactUsContactUs extends Schema.CollectionType {
   collectionName: 'contact_uses';
   info: {
@@ -793,7 +816,15 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    form: Attribute.DynamicZone<['element.input-form', 'element.buttonlink']>;
+    contactbanner: Attribute.Component<'product.about', true>;
+    contactdetails: Attribute.DynamicZone<
+      [
+        'element.input-form',
+        'element.buttonlink',
+        'mapdetails.address-form',
+        'mapdetails.map'
+      ]
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -805,6 +836,47 @@ export interface ApiContactUsContactUs extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::contact-us.contact-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.CollectionType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    footercontents: Attribute.DynamicZone<
+      [
+        'contact.contactus',
+        'footer.companyprofile',
+        'footer.service',
+        'footer.socialnetwork',
+        'footer.product'
+      ]
+    >;
+    colors: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
       'oneToOne',
       'admin::user'
     > &
@@ -872,27 +944,6 @@ export interface ApiHomeHome extends Schema.CollectionType {
     clientreviews: Attribute.Component<'product.client-reviews', true>;
     client: Attribute.Component<'product.client', true>;
     Details: Attribute.Component<'product.product-details', true>;
-    footer: Attribute.DynamicZone<
-      [
-        'contact.contactus',
-        'profiledetail.companyprofile',
-        'profiledetail.service',
-        'profiledetail.socialnetwork',
-        'profiledetail.product'
-      ]
-    >;
-    contactheader: Attribute.DynamicZone<
-      [
-        'product.about',
-        'element.input-form',
-        'element.buttonlink',
-        'shared.address-form',
-        'shared.map'
-      ]
-    >;
-    blogcontent: Attribute.DynamicZone<
-      ['product.about', 'blog.blogheader', 'blog.blogdetail']
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -921,7 +972,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog.blog': ApiBlogBlog;
       'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home.home': ApiHomeHome;
     }

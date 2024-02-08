@@ -1,7 +1,7 @@
 {
   "collectionName": "components_blog_blogheaders",
   "info": {
-    "displayName": "blogheader",
+    "displayName": "bloglist",
     "description": ""
   },
   "options": {},
@@ -10,14 +10,15 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "date": {
       "type": "date"
@@ -27,6 +28,17 @@
     },
     "description": {
       "type": "text"
+    },
+    "blogbutton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "element.buttonlink"
+    },
+    "blogauthor": {
+      "displayName": "blogauthor",
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.blogauthor"
     }
   }
 }

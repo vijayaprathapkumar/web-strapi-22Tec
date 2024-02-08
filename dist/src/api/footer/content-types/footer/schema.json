@@ -1,0 +1,32 @@
+{
+    "kind": "collectionType",
+    "collectionName": "footers",
+    "info": {
+        "singularName": "footer",
+        "pluralName": "footers",
+        "displayName": "footer",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "footercontents": {
+            "type": "dynamiczone",
+            "components": [
+                "contact.contactus",
+                "footer.companyprofile",
+                "footer.service",
+                "footer.socialnetwork",
+                "footer.product"
+            ]
+        },
+        "colors": {
+            "type": "json"
+        }
+    }
+}

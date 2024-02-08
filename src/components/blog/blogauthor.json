@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blog_blogauthors",
+  "info": {
+    "displayName": "blogauthor"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    },
+    "authorlink": {
+      "type": "string"
+    }
+  }
+}

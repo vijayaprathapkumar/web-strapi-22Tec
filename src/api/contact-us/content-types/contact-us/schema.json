@@ -12,11 +12,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "form": {
+    "contactbanner": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product.about"
+    },
+    "contactdetails": {
       "type": "dynamiczone",
       "components": [
         "element.input-form",
-        "element.buttonlink"
+        "element.buttonlink",
+        "mapdetails.address-form",
+        "mapdetails.map"
       ]
     }
   }

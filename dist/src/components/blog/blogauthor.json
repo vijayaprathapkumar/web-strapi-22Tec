@@ -1,15 +1,14 @@
 {
-    "collectionName": "components_shared_address_forms",
+    "collectionName": "components_blog_blogauthors",
     "info": {
-        "displayName": "addressForm",
-        "description": ""
+        "displayName": "blogauthor"
     },
     "options": {},
     "attributes": {
         "content": {
             "type": "string"
         },
-        "type": {
+        "authorlink": {
             "type": "string"
         }
     }

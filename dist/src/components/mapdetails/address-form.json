@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_shared_address_forms",
+    "info": {
+        "displayName": "addressdetail",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "content": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        }
+    }
+}

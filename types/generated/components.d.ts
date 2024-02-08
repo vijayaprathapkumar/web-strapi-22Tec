@@ -1,22 +1,31 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface BlogBlogdetail extends Schema.Component {
-  collectionName: 'components_blog_blogdetails';
+export interface BlogBlogauthor extends Schema.Component {
+  collectionName: 'components_blog_blogauthors';
   info: {
-    displayName: 'blogdetail';
-    description: '';
+    displayName: 'blogauthor';
   };
   attributes: {
     content: Attribute.String;
-    link: Attribute.String;
-    blogbutton: Attribute.Component<'element.buttonlink', true>;
+    authorlink: Attribute.String;
+  };
+}
+
+export interface BlogBlogdetail extends Schema.Component {
+  collectionName: 'components_blog_blogdetails';
+  info: {
+    displayName: 'blogtitle';
+    description: '';
+  };
+  attributes: {
+    blogbanner: Attribute.Component<'product.about', true>;
   };
 }
 
 export interface BlogBlogheader extends Schema.Component {
   collectionName: 'components_blog_blogheaders';
   info: {
-    displayName: 'blogheader';
+    displayName: 'bloglist';
     description: '';
   };
   attributes: {
@@ -25,6 +34,8 @@ export interface BlogBlogheader extends Schema.Component {
     date: Attribute.Date;
     subtitle: Attribute.String;
     description: Attribute.Text;
+    blogbutton: Attribute.Component<'element.buttonlink', true>;
+    blogauthor: Attribute.Component<'blog.blogauthor', true>;
   };
 }
 
@@ -107,6 +118,92 @@ export interface ElementInputForm extends Schema.Component {
   attributes: {
     label: Attribute.String;
     type: Attribute.String;
+  };
+}
+
+export interface FooterCompanyprofile extends Schema.Component {
+  collectionName: 'components_profiledetail_companyprofiles';
+  info: {
+    displayName: 'details';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'footer.companyview', true>;
+  };
+}
+
+export interface FooterCompanyview extends Schema.Component {
+  collectionName: 'components_profiledetail_companyviews';
+  info: {
+    displayName: 'companyview';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+    link: Attribute.String;
+  };
+}
+
+export interface FooterProduct extends Schema.Component {
+  collectionName: 'components_profiledetail_products';
+  info: {
+    displayName: 'copyrights';
+    description: '';
+  };
+  attributes: {
+    link: Attribute.String;
+    title: Attribute.String;
+    colors: Attribute.JSON;
+  };
+}
+
+export interface FooterService extends Schema.Component {
+  collectionName: 'components_profiledetail_services';
+  info: {
+    displayName: 'service';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'footer.companyview', true>;
+  };
+}
+
+export interface FooterSocialnetwork extends Schema.Component {
+  collectionName: 'components_profiledetail_socialnetworks';
+  info: {
+    displayName: 'socialnetwork';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    logos: Attribute.Media;
+    description: Attribute.Text;
+  };
+}
+
+export interface MapdetailsAddressForm extends Schema.Component {
+  collectionName: 'components_shared_address_forms';
+  info: {
+    displayName: 'addressdetail';
+    description: '';
+  };
+  attributes: {
+    content: Attribute.String;
+    type: Attribute.String;
+  };
+}
+
+export interface MapdetailsMap extends Schema.Component {
+  collectionName: 'components_shared_maps';
+  info: {
+    displayName: 'map';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    mapimage: Attribute.Media;
   };
 }
 
@@ -296,94 +393,10 @@ export interface ProductProduct extends Schema.Component {
   };
 }
 
-export interface ProfiledetailCompanyprofile extends Schema.Component {
-  collectionName: 'components_profiledetail_companyprofiles';
-  info: {
-    displayName: 'details';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    company: Attribute.Component<'profiledetail.companyview', true>;
-  };
-}
-
-export interface ProfiledetailCompanyview extends Schema.Component {
-  collectionName: 'components_profiledetail_companyviews';
-  info: {
-    displayName: 'companyview';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.String;
-    link: Attribute.String;
-  };
-}
-
-export interface ProfiledetailProduct extends Schema.Component {
-  collectionName: 'components_profiledetail_products';
-  info: {
-    displayName: 'footerproduct';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.String;
-    title: Attribute.String;
-    colors: Attribute.JSON;
-  };
-}
-
-export interface ProfiledetailService extends Schema.Component {
-  collectionName: 'components_profiledetail_services';
-  info: {
-    displayName: 'service';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    company: Attribute.Component<'profiledetail.companyview', true>;
-  };
-}
-
-export interface ProfiledetailSocialnetwork extends Schema.Component {
-  collectionName: 'components_profiledetail_socialnetworks';
-  info: {
-    displayName: 'socialnetwork';
-  };
-  attributes: {
-    title: Attribute.String;
-    logos: Attribute.Media;
-    description: Attribute.Text;
-  };
-}
-
-export interface SharedAddressForm extends Schema.Component {
-  collectionName: 'components_shared_address_forms';
-  info: {
-    displayName: 'addressForm';
-    description: '';
-  };
-  attributes: {
-    content: Attribute.String;
-    type: Attribute.String;
-  };
-}
-
-export interface SharedMap extends Schema.Component {
-  collectionName: 'components_shared_maps';
-  info: {
-    displayName: 'map';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    mapimage: Attribute.Media;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blog.blogauthor': BlogBlogauthor;
       'blog.blogdetail': BlogBlogdetail;
       'blog.blogheader': BlogBlogheader;
       'contact.address': ContactAddress;
@@ -392,6 +405,13 @@ declare module '@strapi/types' {
       'contact.phone': ContactPhone;
       'element.buttonlink': ElementButtonlink;
       'element.input-form': ElementInputForm;
+      'footer.companyprofile': FooterCompanyprofile;
+      'footer.companyview': FooterCompanyview;
+      'footer.product': FooterProduct;
+      'footer.service': FooterService;
+      'footer.socialnetwork': FooterSocialnetwork;
+      'mapdetails.address-form': MapdetailsAddressForm;
+      'mapdetails.map': MapdetailsMap;
       'nav-bar.about': NavBarAbout;
       'nav-bar.blog': NavBarBlog;
       'nav-bar.contact': NavBarContact;
@@ -405,13 +425,6 @@ declare module '@strapi/types' {
       'product.clientlogo': ProductClientlogo;
       'product.product-details': ProductProductDetails;
       'product.product': ProductProduct;
-      'profiledetail.companyprofile': ProfiledetailCompanyprofile;
-      'profiledetail.companyview': ProfiledetailCompanyview;
-      'profiledetail.product': ProfiledetailProduct;
-      'profiledetail.service': ProfiledetailService;
-      'profiledetail.socialnetwork': ProfiledetailSocialnetwork;
-      'shared.address-form': SharedAddressForm;
-      'shared.map': SharedMap;
     }
   }
 }
