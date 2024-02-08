@@ -9,10 +9,10 @@
     "title": {
       "type": "string"
     },
-    "company": {
+    "items": {
       "type": "component",
       "repeatable": true,
-      "component": "profiledetail.companyview"
+      "component": "footer.companyview"
     }
   }
 }

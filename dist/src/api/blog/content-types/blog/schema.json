@@ -1,0 +1,25 @@
+{
+    "kind": "collectionType",
+    "collectionName": "blogs",
+    "info": {
+        "singularName": "blog",
+        "pluralName": "blogs",
+        "displayName": "blog"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "blogbanner": {
+            "type": "component",
+            "repeatable": true,
+            "component": "product.about"
+        },
+        "bloglist": {
+            "type": "component",
+            "repeatable": true,
+            "component": "blog.blogheader"
+        }
+    }
+}

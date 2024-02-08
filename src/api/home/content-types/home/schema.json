@@ -42,34 +42,6 @@
       "type": "component",
       "repeatable": true,
       "component": "product.product-details"
-    },
-    "footer": {
-      "type": "dynamiczone",
-      "components": [
-        "contact.contactus",
-        "profiledetail.companyprofile",
-        "profiledetail.service",
-        "profiledetail.socialnetwork",
-        "profiledetail.product"
-      ]
-    },
-    "contactheader": {
-      "type": "dynamiczone",
-      "components": [
-        "product.about",
-        "element.input-form",
-        "element.buttonlink",
-        "shared.address-form",
-        "shared.map"
-      ]
-    },
-    "blogcontent": {
-      "type": "dynamiczone",
-      "components": [
-        "product.about",
-        "blog.blogheader",
-        "blog.blogdetail"
-      ]
     }
   }
 }

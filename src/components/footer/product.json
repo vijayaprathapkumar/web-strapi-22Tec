@@ -1,12 +1,12 @@
 {
   "collectionName": "components_profiledetail_products",
   "info": {
-    "displayName": "footerproduct",
+    "displayName": "copyrights",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "content": {
+    "link": {
       "type": "string"
     },
     "title": {
