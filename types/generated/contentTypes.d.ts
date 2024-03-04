@@ -908,6 +908,7 @@ export interface ApiHeaderHeader extends Schema.CollectionType {
         'element.buttonlink'
       ]
     >;
+    main: Attribute.Component<'dispaly.main', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -938,12 +939,10 @@ export interface ApiHomeHome extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
-    PRODUCTS: Attribute.DynamicZone<['product.product']>;
-    aboutus: Attribute.Component<'nav-bar.about', true>;
-    clientreviews: Attribute.Component<'product.client-reviews', true>;
-    client: Attribute.Component<'product.client', true>;
-    Details: Attribute.Component<'product.product-details', true>;
+    blog: Attribute.Component<'dispaly.blogcontent', true>;
+    products: Attribute.DynamicZone<['dispaly.head', 'product.product']>;
+    about: Attribute.Component<'nav-bar.about', true>;
+    client: Attribute.DynamicZone<['dispaly.head', 'dispaly.client-reviews']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

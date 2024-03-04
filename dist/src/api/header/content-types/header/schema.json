@@ -28,6 +28,11 @@
                 "nav-bar.contact",
                 "element.buttonlink"
             ]
+        },
+        "main": {
+            "type": "component",
+            "repeatable": true,
+            "component": "dispaly.main"
         }
     }
 }

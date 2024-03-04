@@ -94,6 +94,53 @@ export interface ContactPhone extends Schema.Component {
   };
 }
 
+export interface DispalyBlogcontent extends Schema.Component {
+  collectionName: 'components_dispaly_blogcontents';
+  info: {
+    displayName: 'blogcontent';
+  };
+  attributes: {
+    content: Attribute.Text;
+    video: Attribute.Media;
+    color: Attribute.JSON;
+  };
+}
+
+export interface DispalyClientReviews extends Schema.Component {
+  collectionName: 'components_dispaly_client_reviews';
+  info: {
+    displayName: 'clientReviews';
+  };
+  attributes: {
+    image1: Attribute.Media;
+    image2: Attribute.Media;
+    description: Attribute.Text;
+  };
+}
+
+export interface DispalyHead extends Schema.Component {
+  collectionName: 'components_dispaly_heads';
+  info: {
+    displayName: 'head';
+  };
+  attributes: {
+    title: Attribute.String;
+  };
+}
+
+export interface DispalyMain extends Schema.Component {
+  collectionName: 'components_dispaly_mains';
+  info: {
+    displayName: 'main';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    button: Attribute.Component<'element.buttonlink', true>;
+    Backgroundimage: Attribute.Media;
+  };
+}
+
 export interface ElementButtonlink extends Schema.Component {
   collectionName: 'components_element_buttonlinks';
   info: {
@@ -278,6 +325,7 @@ export interface NavBarImages extends Schema.Component {
   attributes: {
     logo: Attribute.Media;
     type: Attribute.String;
+    title: Attribute.String;
   };
 }
 
@@ -304,10 +352,8 @@ export interface NavBarTopcontent extends Schema.Component {
     description: '';
   };
   attributes: {
-    content: Attribute.String;
     colors: Attribute.JSON;
-    type: Attribute.String;
-    link: Attribute.String;
+    Backgroundimage: Attribute.Media;
   };
 }
 
@@ -390,6 +436,7 @@ export interface ProductProduct extends Schema.Component {
     Title: Attribute.String;
     link: Attribute.String;
     type: Attribute.String;
+    colors: Attribute.JSON;
   };
 }
 
@@ -403,6 +450,10 @@ declare module '@strapi/types' {
       'contact.contactus': ContactContactus;
       'contact.email': ContactEmail;
       'contact.phone': ContactPhone;
+      'dispaly.blogcontent': DispalyBlogcontent;
+      'dispaly.client-reviews': DispalyClientReviews;
+      'dispaly.head': DispalyHead;
+      'dispaly.main': DispalyMain;
       'element.buttonlink': ElementButtonlink;
       'element.input-form': ElementInputForm;
       'footer.companyprofile': FooterCompanyprofile;

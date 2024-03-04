@@ -1,15 +1,14 @@
 {
-    "collectionName": "components_nav_bar_topcontents",
+    "collectionName": "components_dispaly_blogcontents",
     "info": {
-        "displayName": "topcontent",
-        "description": ""
+        "displayName": "blogcontent"
     },
     "options": {},
     "attributes": {
-        "colors": {
-            "type": "json"
+        "content": {
+            "type": "text"
         },
-        "Backgroundimage": {
+        "video": {
             "allowedTypes": [
                 "images",
                 "files",
@@ -18,6 +17,9 @@
             ],
             "type": "media",
             "multiple": true
+        },
+        "color": {
+            "type": "json"
         }
     }
 }
