@@ -12,36 +12,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
-      "type": "string"
+    "blog": {
+      "type": "component",
+      "repeatable": true,
+      "component": "dispaly.blogcontent"
     },
-    "PRODUCTS": {
+    "products": {
       "type": "dynamiczone",
       "components": [
+        "dispaly.head",
         "product.product"
       ]
     },
-    "aboutus": {
+    "about": {
       "type": "component",
       "repeatable": true,
       "component": "nav-bar.about"
     },
-    "clientreviews": {
-      "type": "component",
-      "repeatable": true,
-      "component": "product.client-reviews"
-    },
     "client": {
-      "displayName": "client",
-      "type": "component",
-      "repeatable": true,
-      "component": "product.client"
-    },
-    "Details": {
-      "displayName": "productDetails",
-      "type": "component",
-      "repeatable": true,
-      "component": "product.product-details"
+      "type": "dynamiczone",
+      "components": [
+        "dispaly.head",
+        "dispaly.client-reviews"
+      ]
     }
   }
 }

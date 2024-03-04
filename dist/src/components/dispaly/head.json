@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_dispaly_heads",
+    "info": {
+        "displayName": "head"
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        }
+    }
+}
